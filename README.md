@@ -28,3 +28,7 @@ E navegar na aplicação localmente.
 
 O backoffice da aplicação é acessado a partir do /manager, sendo criado um usuario no seed, com email de: root@root.com
 e senha 123456.
+
+Link para a aplicação no heroku: https://petshopdojoao.herokuapp.com/
+
+Lembrando que é necessário bater na rota /manager para acessar o painel administrativo, e não existe nenhum serviço já cadastrado.

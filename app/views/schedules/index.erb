@@ -1,0 +1,30 @@
+<%= render "shared/header" %>
+<div class="row">
+  <div class="ml-auto mr-auto">
+    <h1> Listagem de Agendamentos </h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <table class="table">
+      <tr>
+        <th class="text-center" scope="col">Nome do dono</th>
+        <th class="text-center" scope="col">Telefone</th>
+        <th class="text-center" scope="col">Email do dono</th>
+        <th class="text-center" scope="col">Data</th>
+        <th class="text-center" scope="col">Hora</th>
+        <th class="text-center" scope="col">Serviço</th>
+      </tr>
+      <% @schedules.each do |schedule| %>
+        <tr>
+          <td class="text-center"><%= schedule.owner_name %></td>
+          <td class="text-center"><%= schedule.phone %></td>
+          <td class="text-center"><%= schedule.owner_email %></td>
+          <td class="text-center"><%= schedule.date %></td>
+          <td class="text-center"><%= schedule.hour %></td>
+          <td class="text-center"><%= schedule.service.name %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

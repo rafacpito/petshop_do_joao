@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1>Olá <%= @schedule.owner_name %></h1>
+<p>O serviço <%= @schedule.service.name %> foi agendado com sucesso para o dia <%= @schedule.date.strftime('%d/%m/%y') %> as <%= @schedule.hour.strftime('%H:%M') %></p>
+</body>
+</html>

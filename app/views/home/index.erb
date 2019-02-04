@@ -1,0 +1,26 @@
+<%= render "shared/principal_header" %>
+<div class="row">
+    <h1>Serviços disponiveis:</h1>
+  </div>
+  <div class="row">
+    <table class="table">
+      <tr>
+        <th class="text-center" scope="col">Nome</th>
+        <th class="text-center" scope="col">Imagem</th>
+        <th class="text-center" scope="col">Descrição</th>
+        <th class="text-center" scope="col">Valor</th>
+        <th class="text-center" scope="col">Ações</th>
+      </tr>
+      <% @services.each do |service|%>
+        <tr>
+          <td class="p-5 text-center"><%= service.name %></td>
+          <td class="text-center"><img src="<%= service.image.url %>" alt="Teste" width="150" height="150"></td>
+          <td class="p-5 text-center"><%= service.description %></td>
+          <td class="p-5 text-center"><%= service.value %></td>
+          <td class="p-5 d-flex justify-content-center">
+            <%= link_to 'Agendar', new_schedule_path(service_id: service), class:'btn btn-primary' %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>

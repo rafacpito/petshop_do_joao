@@ -1,0 +1,19 @@
+<%= form_for @service, html: {class: "mr-auto ml-auto"} do |f|%>
+  <div class="form-group">
+    <%= label_tag :name, "Nome do serviço" %>
+    <%= f.text_field :name, class: "form-control", required: true  %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :description, "Descrição" %>
+    <%= f.text_area :description, class: "form-control",  required: true  %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :value, "Valor" %>
+    <%= f.number_field :value, class: "form-control",  required: true, step: :any  %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :image, "Imagem do serviço" %>
+    <%= f.file_field :image, class: "form-control",  required: true  %>
+  </div>
+  <%= f.submit button, class: "btn btn-primary"%>
+<% end %>

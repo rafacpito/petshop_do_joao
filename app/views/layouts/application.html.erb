@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Petshop do João</title>
+    <%= csrf_meta_tags %>
+    <link href="/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="container">
+    <div class="row">
+      <% if flash[:success] %>
+        <div class="mr-auto ml-auto mt-2">
+          <div class="alert alert-success"><%= flash[:success] %></div>
+        </div>
+      <% end %>
+      <% if flash[:danger] %>
+        <div class="mr-auto ml-auto mt-2">
+          <div class="alert alert-danger"><%= flash[:danger] %></div>
+        </div>
+      <% end %>
+    </div>
+    <%= yield %>
+  </div>
+  </body>
+</html>

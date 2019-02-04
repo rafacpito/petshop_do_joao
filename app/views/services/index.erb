@@ -1,0 +1,36 @@
+<%= render "shared/header" %>
+<div class="row">
+  <div class="ml-auto mr-auto">
+    <h1> Listagem de Serviços </h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <%= link_to 'Cadastrar serviço', new_service_path, class:'float-right btn btn-primary mb-1'%>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <table class="table">
+      <tr>
+        <th class="text-center" scope="col">Imagem</th>
+        <th class="text-center" scope="col">Nome</th>
+        <th class="text-center" scope="col">Descrição</th>
+        <th class="text-center" scope="col">Valor</th>
+        <th class="text-center" scope="col">Ações</th>
+      </tr>
+      <% @services.each do |service| %>
+        <tr>
+          <td class="text-center"><img src="<%= service.image.url %>" alt="Teste" width="150" height="150"></td>
+          <td class="p-5 text-center"><%= service.name %></td>
+          <td class="p-5 text-center"><%= service.description %></td>
+          <td class="p-5 text-center"><%= service.value %></td>
+          <td class="p-5 d-flex justify-content-center">
+            <%= link_to 'Editar', edit_service_path(service.id), class:'btn btn-primary' %>
+            <%= link_to 'Excluir', service, method: :delete, data: { confirm: 'Tem certeza que deseja excluir este usuário?' }, class: ' ml-1 btn btn-danger'%>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

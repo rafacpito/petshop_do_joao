@@ -1,0 +1,32 @@
+<%= render "shared/principal_header" %>
+<div class="row">
+  <div class="ml-auto mr-auto">
+    <h2>Agendar</h2>
+  </div>
+</div>
+<div class="row">
+  <%= form_for @schedule, html: {class: "col"} do |f|%>
+    <%= f.hidden_field :service_id, value: params[:service_id], class: 'form-control' %>
+    <div class="form-group">
+      <%= label_tag :owner_name, "Nome do dono" %>
+      <%= f.text_field :owner_name, class: "form-control", required: true  %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :phone, "Telefone" %>
+      <%= f.text_field :phone, class: "form-control", required: true %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :owner_email, "Email do dono" %>
+      <%= f.text_field :owner_email, class: "form-control", required: true %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :date, "Data" %>
+      <%= f.date_field :date, class: "form-control", required: true %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :hour, "Hora" %>
+      <%= f.time_field :hour, class: "form-control", required: true %>
+    </div>
+    <%= f.submit 'Agendar', class: "btn btn-primary"%>
+  <% end %>
+</div>

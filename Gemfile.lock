@@ -186,6 +186,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap (~> 4.1.3)
+  bundler (~> 2.0)
   carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
   devise
